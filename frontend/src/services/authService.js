@@ -1,0 +1,2 @@
+const KEY="jtah_lms_demo_user";
+export const authService={getUser(){try{return JSON.parse(localStorage.getItem(KEY))}catch{return null}},async login({email,role="Learner"}){const user={id:"demo-user",name:email.split("@")[0].replace(/[._-]/g," ").replace(/\b\w/g,c=>c.toUpperCase()),email,role};localStorage.setItem(KEY,JSON.stringify(user));return user},logout(){localStorage.removeItem(KEY)},async register(data){localStorage.setItem("jtah_lms_pending_email",data.email);return {success:true}},async verifyEmail(){return {success:true}}};

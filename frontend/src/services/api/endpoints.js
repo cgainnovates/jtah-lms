@@ -1,0 +1,1 @@
+export const endpoints={auth:{login:"/auth/login",register:"/auth/register",logout:"/auth/logout",verifyEmail:"/auth/verify-email",me:"/auth/me"},courses:"/courses",users:"/users",careers:"/career-pathways",materials:"/materials",assessments:"/assessments",notifications:"/notifications"};

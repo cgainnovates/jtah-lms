@@ -1,30 +1,3 @@
-import {LayoutDashboard, Milestone, BookOpen, Video, ClipboardList, Award,
-Users, Library, LifeBuoy, House, User} from "lucide-react";
-
-export const sidebarItems = [
-    {id : "dashboard", label: "Dashboard", to: "/dashboard", icon: LayoutDashboard, comingSoon: false},
-    {id: "path", label: "My Learning path", to: "/path", icon: Milestone, comingSoon: true},
-    {id: "courses", label: "My Courses", to: "/courses", icon: BookOpen, comingSoon: true},
-    {id: "live", label: "Live Sessions", to: "/live", icon: Video, comingSoon: true},
-    {id: "assignments", label: "Assignments", to: "/assignments", icon:ClipboardList, comingSoon: true},
-    {id: "certificates", label: "Certificates", to: "/certificates", icon: Award, comingSoon: true},
-    {id: "community", label: "Community", to: "/community", icon: Users, comingSoon: true },
-    {id: "resources", label: "Resources", to: "/resources", icon: Library, comingSoon: true},
-    {id: "help", label: "Help and Support", to: "/help", icon: LifeBuoy, comingSoon: true}
-];
-
-export const tabBarItems = [
-    { id: "home",      label: "Home",      to: "/dashboard", icon: House, comingSoon: false },
-    { id: "courses",   label: "Courses",   to: "/courses",   icon: BookOpen, comingSoon: true },
-    { id: "live",      label: "Live",      to: "/live",      icon: Video, comingSoon: true },
-    { id: "community", label: "Community", to: "/community", icon: Users, comingSoon: true },
-    { id: "profile",   label: "Profile",   to: "/profile",   icon: User, comingSoon: true },
-];
-
-export const profileMenuItems = [
-    { id: "assignments", label: "Assignments",      to: "/assignments", icon: ClipboardList, comingSoon: true },
-    { id: "path",        label: "My Learning Path", to: "/path",        icon: Milestone, comingSoon: true },
-    { id: "resources",   label: "Resources",        to: "/resources",   icon: Library, comingSoon: true },
-    { id: "certificates",label: "Certificates",     to: "/certificates",icon: Award, comingSoon: true },
-    { id: "help",        label: "Help & Support",   to: "/help",        icon: LifeBuoy, comingSoon: true },
-];
+import {LayoutDashboard,Milestone,BookOpen,ClipboardList,Award,Library,LifeBuoy,Users,User,Settings,FolderKanban,GraduationCap} from "lucide-react";
+export const learnerItems=[{id:"dashboard",label:"Overview",to:"/dashboard",icon:LayoutDashboard},{id:"path",label:"Career pathways",to:"/pathways",icon:Milestone},{id:"courses",label:"My courses",to:"/courses",icon:BookOpen},{id:"assignments",label:"Assessments",to:"/assignments",icon:ClipboardList},{id:"certificates",label:"Certificates",to:"/certificates",icon:Award},{id:"resources",label:"Resources",to:"/resources",icon:Library},{id:"community",label:"Community",to:"/community",icon:Users},{id:"help",label:"Help & support",to:"/help",icon:LifeBuoy},{id:"profile",label:"My profile",to:"/profile",icon:User}];
+export const adminItems=[{id:"admin",label:"Overview",to:"/admin",icon:LayoutDashboard},{id:"admin-courses",label:"Course management",to:"/admin/courses",icon:BookOpen},{id:"admin-users",label:"Users",to:"/admin/users",icon:Users},{id:"admin-careers",label:"Career pathways",to:"/admin/pathways",icon:Milestone},{id:"admin-materials",label:"Learning materials",to:"/admin/materials",icon:Library},{id:"admin-assessments",label:"Assessments",to:"/admin/assessments",icon:ClipboardList},{id:"admin-reports",label:"Reports & analytics",to:"/admin/reports",icon:FolderKanban},{id:"admin-settings",label:"Settings",to:"/admin/settings",icon:Settings}];

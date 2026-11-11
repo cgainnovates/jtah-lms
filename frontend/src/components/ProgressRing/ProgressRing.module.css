@@ -1,0 +1,1 @@
+.ring{border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--purple) var(--progress),var(--lavender) 0);position:relative;flex:none}.ring:before{content:"";position:absolute;inset:7px;border-radius:50%;background:white}.ring div{z-index:1}.ring strong{font-size:16px;color:var(--deep-purple)}

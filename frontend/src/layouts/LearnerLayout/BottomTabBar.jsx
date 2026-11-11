@@ -1,0 +1,3 @@
+import {NavLink} from "react-router-dom";import {House,BookOpen,Milestone,User} from "lucide-react";import styles from "./BottomTabBar.module.css";
+const items=[{to:"/dashboard",label:"Home",Icon:House},{to:"/courses",label:"Courses",Icon:BookOpen},{to:"/pathways",label:"Path",Icon:Milestone},{to:"/profile",label:"Profile",Icon:User}];
+export default function BottomTabBar(){return <nav className={styles.bar} aria-label="Mobile navigation">{items.map(({to,label,Icon})=><NavLink key={to} to={to} className={({isActive})=>isActive?styles.active:styles.link}><Icon size={19}/><span>{label}</span></NavLink>)}</nav>}

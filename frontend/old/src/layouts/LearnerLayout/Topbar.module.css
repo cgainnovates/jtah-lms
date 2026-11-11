@@ -1,0 +1,22 @@
+.topbar{
+    height: 72px;
+    margin: 5px;
+    width: 100%;
+    max-width: 1180px;
+    border: 1px solid var(--line);
+}
+.searchInput{
+    width: 420px;
+    height: 44px;
+    padding: 18px;
+    border-radius: 22px;
+    background-color: #FAF8FE;
+    border: none;
+}
+.searchInput:focus{
+    outline: 1px solid var(--line);
+}
+.notificationIcon{
+    width: 40px;
+    height: 40px;
+}

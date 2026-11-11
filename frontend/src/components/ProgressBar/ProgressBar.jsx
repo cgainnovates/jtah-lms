@@ -1,0 +1,2 @@
+import styles from "./ProgressBar.module.css";
+export default function ProgressBar({value=0,label,showValue=true}){const progress=Math.max(0,Math.min(100,Number(value)||0));return <div className={styles.wrap}>{(label||showValue)&&<div className={styles.meta}>{label&&<span>{label}</span>}{showValue&&<strong>{progress}%</strong>}</div>}<div className={styles.track} role="progressbar" aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100"><span style={{width:`${progress}%`}}/></div></div>}

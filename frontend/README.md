@@ -1,16 +1,49 @@
-# React + Vite
+# JTAH Learning Management System — Frontend Preview
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React 19 + JavaScript + Vite 8 frontend. This project extends the supplied JTAH source while preserving its logo, brand tokens, CSS Modules conventions, and existing landing/authentication pages.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
 
-## React Compiler
+Build with `npm run build`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Preview access
 
-## Expanding the Oxlint configuration
+Sign in at `/login` with any email and password. Select Learner or Administrator in the preview role selector. This is a local demonstration only; it is not secure authentication. Admin routes must be protected by server-side authorisation before production.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Architecture
+
+- `src/pages`: route-level screens.
+- `src/features`: domain-specific UI, including authentication and courses.
+- `src/layouts`: shared learner/admin shell and authentication layouts.
+- `src/components`: reusable UI components.
+- `src/services`: mock repository, storage, API client and domain service interfaces.
+- `src/mocks`: initial demonstration entities.
+- `src/contexts`: application authentication state.
+
+## Data and persistence
+
+The mock repository persists course, career and user changes in browser `localStorage` under the `jtah_lms_` prefix. This is browser-local demonstration data, not a database. Clear site storage or remove keys with this prefix to reset the preview. The API client is configured through `VITE_API_BASE_URL`.
+
+## Current functional scope
+
+- Existing landing, sign-up, login and email verification screens retained.
+- Responsive learner portal and dashboard.
+- Course catalogue, course detail and lesson navigation.
+- Local course progress updates.
+- Career pathway exploration and selection.
+- Admin overview, course CRUD, user role editing and career pathway CRUD.
+- Supporting learner pages for assessments, certificates, resources, profile, notifications, community and help.
+
+## Limitations before production
+
+Authentication, email verification, real media upload/streaming, server-side enrolment, assessment grading, certificate generation, notification delivery, analytics and permission enforcement are not connected to a backend. Some supporting pages are intentionally preview-level interfaces. The course editor currently manages course metadata; a richer nested module/lesson builder is a subsequent implementation step.
+
+## Backend integration
+
+Implement the documented service contracts in `src/services`. Replace mock repository calls with API requests while retaining component-facing service interfaces. Use backend-enforced roles and permissions, validated uploads to object storage, database-backed progress, and secure session handling. Never rely on client-side route guards as the security boundary.

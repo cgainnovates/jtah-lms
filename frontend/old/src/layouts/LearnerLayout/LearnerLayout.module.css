@@ -1,0 +1,9 @@
+
+.parentLayout{
+    display: flex;
+    width: 100%;
+}
+.bars{
+    width: 82%;
+    margin-inline: 5px;
+}

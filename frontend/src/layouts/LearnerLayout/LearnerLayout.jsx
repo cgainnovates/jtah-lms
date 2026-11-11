@@ -1,0 +1,2 @@
+import {Outlet} from "react-router-dom";import Sidebar from "./Sidebar.jsx";import Topbar from "./Topbar.jsx";import BottomTabBar from "./BottomTabBar.jsx";import styles from "./LearnerLayout.module.css";
+export default function LearnerLayout({admin=false}){return <div className={styles.shell}><Sidebar admin={admin}/><div className={styles.main}><Topbar admin={admin}/><div className={styles.content}><Outlet/></div></div>{!admin&&<BottomTabBar/>}</div>}

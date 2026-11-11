@@ -7,7 +7,9 @@ export default function Icon({
     src: IconComponent,
     size = "md",
     className = "",
-    color = "currentColor"
+    color = "currentColor",
+    fill = "none"
+
 }) {
     const pixels = size === "lg" ? 100 : 48;
 
@@ -17,6 +19,7 @@ export default function Icon({
             color={color}
             className={`${styles[size]} ${className}`}
             aria-hidden="true"
+            fill = {fill}
         />
     );
 }
