@@ -7,19 +7,25 @@ import DashboardPage from "./pages/DashboardPage.jsx";
 import LearnerLayout from "./layouts/LearnerLayout/LearnerLayout.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { AuthProvider } from "./contexts/AuthContext.jsx";
-import {
-  SimplePage,
-  CourseDetailPage,
-  LearningPage,
-  AdminOverviewPage,
-  AdminCoursesPage,
-  AdminUsersPage,
-  AdminPathwaysPage,
-} from "./pages/PortalPages.jsx";
+import { SimplePage, CourseDetailPage, LearningPage } from "./pages/PortalPages.jsx";
+import { ToastProvider } from "./features/admin/shared/ToastProvider.jsx";
+import AdminDashboardPage from "./features/admin/pages/AdminDashboardPage.jsx";
+import CourseListPage from "./features/admin/course/CourseListPage.jsx";
+import CourseEditorPage from "./features/admin/course/CourseEditorPage.jsx";
+import LearnersPage from "./features/admin/pages/LearnersPage.jsx";
+import LearnerDetailPage from "./features/admin/pages/LearnerDetailPage.jsx";
+import PathwaysPage from "./features/admin/pages/PathwaysPage.jsx";
+import PathwayEditorPage from "./features/admin/pages/PathwayEditorPage.jsx";
+import MaterialsPage from "./features/admin/pages/MaterialsPage.jsx";
+import AssessmentListPage from "./features/admin/assessments/AssessmentListPage.jsx";
+import AssessmentEditorPage from "./features/admin/assessments/AssessmentEditorPage.jsx";
+import ReportsPage from "./features/admin/pages/ReportsPage.jsx";
+import SettingsPage from "./features/admin/pages/SettingsPage.jsx";
 
 export default function App() {
   return (
     <AuthProvider>
+      <ToastProvider>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/signup" element={<SignupPage />} />
@@ -44,20 +50,28 @@ export default function App() {
 
           <Route element={<ProtectedRoute roles={["Administrator"]} />}>
             <Route element={<LearnerLayout admin />}>
-              <Route path="/admin" element={<AdminOverviewPage />} />
-              <Route path="/admin/courses" element={<AdminCoursesPage />} />
-              <Route path="/admin/users" element={<AdminUsersPage />} />
-              <Route path="/admin/pathways" element={<AdminPathwaysPage />} />
-              <Route path="/admin/materials" element={<SimplePage kind="adminMaterials" />} />
-              <Route path="/admin/assessments" element={<SimplePage kind="adminAssessments" />} />
-              <Route path="/admin/reports" element={<SimplePage kind="adminReports" />} />
-              <Route path="/admin/settings" element={<SimplePage kind="adminSettings" />} />
+              <Route path="/admin" element={<AdminDashboardPage />} />
+              <Route path="/admin/courses" element={<CourseListPage />} />
+              <Route path="/admin/courses/new" element={<CourseEditorPage />} />
+              <Route path="/admin/courses/:courseId/edit" element={<CourseEditorPage />} />
+              <Route path="/admin/users" element={<LearnersPage />} />
+              <Route path="/admin/users/:userId" element={<LearnerDetailPage />} />
+              <Route path="/admin/pathways" element={<PathwaysPage />} />
+              <Route path="/admin/pathways/new" element={<PathwayEditorPage />} />
+              <Route path="/admin/pathways/:pathwayId/edit" element={<PathwayEditorPage />} />
+              <Route path="/admin/materials" element={<MaterialsPage />} />
+              <Route path="/admin/assessments" element={<AssessmentListPage />} />
+              <Route path="/admin/assessments/new" element={<AssessmentEditorPage />} />
+              <Route path="/admin/assessments/:assessmentId/edit" element={<AssessmentEditorPage />} />
+              <Route path="/admin/reports" element={<ReportsPage />} />
+              <Route path="/admin/settings" element={<SettingsPage />} />
             </Route>
           </Route>
         </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      </ToastProvider>
     </AuthProvider>
   );
 }

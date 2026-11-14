@@ -38,3 +38,18 @@
     /* Side padding that grows a little with the screen */
     --page-gutter: clamp(20px, 4.5vw, 60px);
 }
+
+:root {
+  /* Shared interface rhythm and interaction tokens. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --shadow-card: 0 5px 22px rgba(46, 31, 94, .055);
+  --shadow-raised: 0 12px 34px rgba(46, 31, 94, .12);
+  --transition-fast: 150ms ease;
+  --transition-standard: 220ms ease;
+}
